@@ -9,27 +9,27 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView mRcl;
-    private ArrayList<AppEntity> listApp;
-    private AppAdapter adapter;
+    private RecyclerView mRclPhim;
+    private ArrayList<AppEntity> mlistApp;
+    private AppAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mRcl = findViewById(R.id.rcl);
+        mRclPhim = findViewById(R.id.rcl);
         createData();
-        adapter = new AppAdapter(listApp,getLayoutInflater());
+        mAdapter = new AppAdapter(mlistApp,getLayoutInflater());
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRcl.setLayoutManager(manager);
-        mRcl.setAdapter(adapter);
+        mRclPhim.setLayoutManager(manager);
+        mRclPhim.setAdapter(mAdapter);
     }
     private void createData() {
-        listApp  = new ArrayList<>();
-        listApp.add(new AppEntity(R.drawable.cbsg,getString(R.string.name_phim)));
-        listApp.add(new AppEntity(R.drawable.dv,getString(R.string.name_phim1)));
-        listApp.add(new AppEntity(R.drawable.st,getString(R.string.name_phim2)));
-        listApp.add(new AppEntity(R.drawable.te,getString(R.string.name_phim3)));
+        mlistApp  = new ArrayList<>();
+        mlistApp.add(new AppEntity(R.drawable.cbsg,getString(R.string.name_phim)));
+        mlistApp.add(new AppEntity(R.drawable.dv,getString(R.string.name_phim1)));
+        mlistApp.add(new AppEntity(R.drawable.st,getString(R.string.name_phim2)));
+        mlistApp.add(new AppEntity(R.drawable.te,getString(R.string.name_phim3)));
     }
 }

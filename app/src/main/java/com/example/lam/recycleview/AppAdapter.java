@@ -13,31 +13,27 @@ import java.util.ArrayList;
 
 
 public class AppAdapter extends RecyclerView.Adapter<AppAdapter.RecyclerViewHolder> {
-    private ArrayList<AppEntity> listApp;
+    private ArrayList<AppEntity> mListApp;
     private LayoutInflater inflater;
-
-    public AppAdapter(ArrayList<AppEntity> listApp, LayoutInflater inflater) {
-        this.listApp = listApp;
+    public AppAdapter(ArrayList<AppEntity> mListApp, LayoutInflater inflater) {
+        this.mListApp = mListApp;
         this.inflater = inflater;
     }
-
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = inflater.from(parent.getContext()).inflate(R.layout.item_app,parent,false);
-        return new RecyclerViewHolder(itemView);
+        return new RecyclerViewHolder(inflater.from(parent.getContext()).inflate(R.layout.item_app,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
-        AppEntity app = listApp.get(position);
+        AppEntity app = mListApp.get(position);
         holder.mTxtPhim.setText(app.getmNamePhim());
         holder.mIcPhim.setImageResource(app.getmIcphim());
-
     }
     @Override
     public int getItemCount() {
-        return listApp.size();
+        return mListApp.size();
     }
 
     class RecyclerViewHolder extends RecyclerView.ViewHolder{
@@ -50,6 +46,4 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.RecyclerViewHold
          mTxtPhim = itemView.findViewById(R.id.txt_ph);
      }
  }
-
-
 }
