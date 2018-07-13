@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RecycleView</string>
+    <string name="name_phim">Cô Ba Sài Gòn</string>
+    <string name="name_phim1"> Điệp Viên XXX </string>
+    <string name="name_phim2"> Sói Trắng </string>
+    <string name="name_phim3"> Prey for the childen</string>
+
+
 </resources>
